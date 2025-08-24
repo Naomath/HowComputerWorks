@@ -1,18 +1,3 @@
-# Welcome to MkDocs
+# 電気からはじめるコンピュータ
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org). Hello
-Helllllllllllllllll
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+このサイトでは電気の話から始めて、目の前のコンピュータがなぜ動いているかを一気通貫に理解できるようになることを目標にします。前提知識は高校生程度の物理学と数学ですが、なるべくそれらを知らない人もわかるように説明します。

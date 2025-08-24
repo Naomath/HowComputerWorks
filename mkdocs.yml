@@ -1,6 +1,17 @@
-site_name: MkLorum
+site_name: 電気からはじめるコンピュータ
 nav:
   - Home: index.md
-  - About: about.md
+  - 第1章 物理学: 1_physics.md
 theme:
   name: material
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
