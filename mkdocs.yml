@@ -2,6 +2,7 @@ site_name: 電気からはじめるコンピュータ
 nav:
   - Home: index.md
   - 第1章 物理学: 1_physics.md
+  - 第2章 トランジスタ: 2_transistor.md
 theme:
   name: material
 
