@@ -3,6 +3,8 @@ nav:
   - Home: index.md
   - 第1章 物理学: 1_physics.md
   - 第2章 トランジスタ: 2_transistor.md
+  - 第3章 論理回路: 3_logic.md
+  - 1~3章補足: appendix_1_3.md
 theme:
   name: material
 
