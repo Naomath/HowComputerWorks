@@ -5,7 +5,7 @@ nav:
   - 第2章 トランジスタ: 2_transistor.md
   - 第3章 論理回路: 3_logic.md
   - 1~3章補足: appendix_1_3.md
-  - WSL セットアップ: wsl_setup.md
+  - OS: os.md
 theme:
   name: material
 
