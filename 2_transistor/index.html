@@ -1,0 +1,734 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1_physics/">
+      
+      
+        <link rel="next" href="../3_logic/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>第2章 トランジスタ - 電気からはじめるコンピュータ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="電気からはじめるコンピュータ" class="md-header__button md-logo" aria-label="電気からはじめるコンピュータ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            電気からはじめるコンピュータ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              第2章 トランジスタ
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="電気からはじめるコンピュータ" class="md-nav__button md-logo" aria-label="電気からはじめるコンピュータ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    電気からはじめるコンピュータ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_physics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第1章 物理学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    第2章 トランジスタ
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    第2章 トランジスタ
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      取り扱う項目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      半導体
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      トランジスタ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosfet" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOSFET
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      スケーリング則
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      トランジスタを買ってみる
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第3章 論理回路
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix_1_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1~3章補足
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      取り扱う項目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      半導体
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      トランジスタ
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mosfet" class="md-nav__link">
+    <span class="md-ellipsis">
+      MOSFET
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      スケーリング則
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      トランジスタを買ってみる
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>第2章 トランジスタ</h1>
+
+<h2 id="_1">取り扱う項目</h2>
+<ul>
+<li>半導体</li>
+<li>トランジスタ</li>
+<li>MOSFET</li>
+<li>スケーリング則</li>
+<li>トランジスタを買ってみる</li>
+</ul>
+<h2 id="_2">半導体</h2>
+<p>第1章では、半導体とは導体と絶縁体の中間である、と説明しました。
+定量的には、電子が束縛されている状態に位置する価電子帯と、自由に動き回れて電流を担える伝導帯のエネルギーギャップがどれぐらいかで評価することができます。
+半導体の性質を示す代表的な元素としては、Si シリコンがあります。
+このシリコンにリンやホウ素という別の元素を少しだけ加えて、n型半導体、p型半導体を作り、それらをもとにトランジスタが作成されます。
+これらの半導体は、<strong>かける電圧を変えることで流れる電流を調整できる</strong>、という性質があるため、トランジスタで用いられています。
+他にも光や温度でも流れる電流が変化するという性質を示すこともあるので、半導体はセンサーに用いられることもあります。
+この辺りの性質を説明する物理が、量子力学や統計力学になります。</p>
+<p>現代のいわゆる半導体チップは、高純度のシリコンウェハー（薄い円柱）の上に色々な加工がされていき、最終的にはいくつものチップがそのウェハーにできあがります。
+そのウェハーを分割して、一つのチップになるわけです。
+この大元のシリコンウェハーの世界シェア第一位と言われているのが信越化学工業です。
+また、このいろいろな加工と言っても、いくつものプロセスがあり、それぞれの加工をになっている機械を作っている企業が半導体関連企業として紹介されたりします。
+例えば、露光装置は回路のパターンをウェハーに書き込む装置ですが、日経などでも目にする3nmや5nmといった最先端の細かいパターンを書き込むには、オランダのASML社のEUV露光装置が必須となり、一社独占の状態となっています。
+この3nmや5nmなどについては、「スケーリング則」のパートで解説します。</p>
+<p>ところで、半導体という言葉は二つの側面で使われているのではないかと思います。
+一つは紹介したように、純粋に物質の性質を示す言葉として。
+そして、もう一つはCPUなどのチップそのものを半導体と呼んでいるのではないかと思います。
+理工系の技術を解説する本で後者の意味で用いているものは少ないかと思いますが、テレビや新聞では基本的に後者の意味でしか用いられていないので、注意が必要です。</p>
+<div class="admonition info">
+<p class="admonition-title">『半導体戦争』（2023年, クリス・ミラー）</p>
+<p>ショックレーらが世界で初めてトランジスタを作成した時点から現代まで、チップがどのように技術的に進歩し、そして活用されてきたかを解説した本です。
+原題は “Chip War”。個人的には、化学的な「半導体」そのものより「高性能なチップをどう作るか」が本質だと感じる一方で、
+それでも慣習的に「半導体」と呼ばれる点にいつも違和感があります。</p>
+</div>
+<h2 id="_3">トランジスタ</h2>
+<p>トランジスタとは、入力信号を増幅またはスイッチングすることができる素子になります。
+日常生活に出てくる場面としては、トランジスタラジオとかでしょうか。
+受信したラジオ電波の増幅回路がトランジスタが用いられているラジオの種類です。
+音楽をしているとアンプなんかも使うでしょうが、アンプとはamplifierのことで増幅器です。
+あの黒い箱の中ではふんだんにトランジスタが使われているはずです。
+また、オペアンプ（差動増幅器）なんかもよく聞きますが、これも中ではトランジスタが用いられています。
+この増幅器としての性質は電子回路を考える際に根幹をなすものですが、このサイトはコンピューターのCPUとかOSを主題とするため、軽く紹介するだけに留めます。</p>
+<p>もう一方のスイッチングとは電流が流れるかどうかを制御する働きです。
+以下の図はわかりやすく簡略したものですが、制御電圧をONにすれば、スイッチONになってつながると考えればよいです。
+「つながる」とは、「流れる端点同士で同電圧になる」というふうに言い換えてみてください。
+制御電圧がONかOFFで、電圧がON電圧かOFF電圧かになる、というふうに考えれば、何となく0と1の世界とよく言われるコンピューターの根幹部品としてトランジスタが重要な役割を果たしているように思えるのではないのでしょうか。
+ちなみに、一般的にコンピュターサイエンス CSと呼ばれる分野では、トランジスタのスイッチング特性を受け入れたところから勉強が出発します。</p>
+<div class="admonition info">
+<p class="admonition-title">真空管</p>
+<p>増幅とスイッチングをできる素子として、トランジスタの前に用いられているものは真空管でした。
+よく昔のコンピューターはまるまる一部屋を占領していた、なんて聞くことがありますが、これはトランジスタの代わりに、電球サイズぐらいある真空管が大量に用いられていたからです。
+真空管はよく故障し、またトランジスタは後述するスケーリング則という優れた性質を示したので、お役御免となったわけです。</p>
+</div>
+<h2 id="mosfet">MOSFET</h2>
+<p>トランジスタにはいくつかの種類がありますが、コンピューターのチップで広く用いられているMOSFETに着目して勉強します。
+MOSFETとは、Metal Oxide-Semiconductor Field Effect Transistorの略称で、日本語で言うと、金属酸化膜半導体電界効果トランジスタです。
+標準的に使われているものとしては、もう少し細かく言うと、エンハンスメント型MOSFETになります。
+また、nMOSとpMOSという2種類がそのエンハンスメント型MOSFETでも分けることができ、現代のコンピュータのチップではCMOSといって、それぞれを相補的に組み合わせることで、回路を実現しています。</p>
+<p>これらのMOSFETの物理の仕組みは割愛して、nMOSのスイッチングの動作のみに焦点を絞り解説します。
+まずどちらも三つの端子、S ソース、G ゲート、D ドレインがあり、これらに電圧をかけることになります。
+ソースとドレインは、構造的には同じですが、ゲートより電圧が低い方がソースで、高い方がドレインです。
+ゲートにON電圧がかかると、ドレインとソースに電流が流れるようになり、同電圧になります。
+逆に、ON電圧がかかっていない、つまりOFF電圧がかかっていると、ドレインとソースは電流が流れることがなく、接続が切れているとみることができます。</p>
+<p>nMOSとは逆に、pMOSでは「負のゲート電圧」でオンになるのが特徴です。
+pMOSも同様に3つの端子、S（ソース）、G（ゲート）、D（ドレイン）を持ち、これらに電圧をかけて制御します。
+ソースとドレインは構造的には同じですが、ゲートより電圧が高い方がソースで、低い方がドレインです。
+このソースとドレインの関係はnMOSと逆になります。
+pMOSの場合、<strong>ソースと同じ高電圧</strong>がかかっているときは、ドレインとソース間に電流は流れず、接続が切れているとみることができます。
+一方、<strong>ソースより十分低い電圧</strong>がかかると、ドレインとソースの間に電流が流れ、やがて両者の電圧は同じになります。</p>
+<p>また、以下の断面図のソースとドレインの間の長さをチャンネル長といい、これはMOSFETの性質を決める重要なパラメータとなります。
+よくメディアで、「10umプロセスの半導体」などいいますが、これはこのチャンネル長が10umということです。
+このチャンネル長が歴史的には短くなり続けてきたわけですが、FinFETという三次元的に構成するMOSFETが登場してからは、例えば、5nmとか3nmとか言っても、全くもって実際のチャンネル長を表すわけではなくなりました。
+マーケティング的に、一応は長さをつけて呼んでいるようです。
+実際に、Rapidus社も2nmプロセスを製造する、と意気込んでいるわけです。</p>
+<div class="admonition info">
+<p class="admonition-title">デバイス</p>
+<p>「半導体」という言葉の使われ方と同じですが、「デバイス」という言葉も二つの使われ方があるようです。
+一つは電子機器の意味、そしてもう一つはダイオードやトランジスタなどの半導体素子の意味です。
+半導体の専門家たちは後者の意味で多用するように思いますし、例えば、私のいる学科で「デバイス系の研究室」と言ったら、「新しい電子機器を開発する研究室」ではなくて、「新しい半導体素子を開発する研究室」を指すことになります。
+最近の新しいデバイスとしては、シリコンフォトニクスといって、シリコンウェハーの上に光の回路を構築したデバイスが注目されているようです。</p>
+</div>
+<h2 id="_4">スケーリング則</h2>
+<p>MOSFETにはは微細化が進むと高性能化するという特徴があり、このスケーリング則が半導体産業の今日までの発展を支えてきた、と紹介されることが多いです。
+具体的には、以下の表のようになります。</p>
+<p><strong>トランジスタの設計で調整するパラメーター</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>パラメータ</strong></th>
+<th><strong>記号</strong></th>
+<th><strong>スケーリング則</strong></th>
+<th><strong>意味・影響</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>チャネル長</td>
+<td><span class="arithmatex">\(L\)</span></td>
+<td><span class="arithmatex">\(1/S\)</span></td>
+<td>MOSFETの長さを縮小</td>
+</tr>
+<tr>
+<td>チャネル幅</td>
+<td><span class="arithmatex">\(W\)</span></td>
+<td><span class="arithmatex">\(1/S\)</span></td>
+<td>MOSFETの幅を縮小</td>
+</tr>
+<tr>
+<td>酸化膜厚</td>
+<td><span class="arithmatex">\(t_{\mathrm{ox}}\)</span></td>
+<td><span class="arithmatex">\(1/S\)</span></td>
+<td>酸化膜を薄くすることでゲート制御性を維持</td>
+</tr>
+<tr>
+<td>電源電圧</td>
+<td><span class="arithmatex">\(V_{DD}\)</span></td>
+<td><span class="arithmatex">\(1/S\)</span></td>
+<td>電界一定を保つため電圧も比例縮小</td>
+</tr>
+<tr>
+<td>しきい値電圧</td>
+<td><span class="arithmatex">\(V_{\mathrm{th}}\)</span></td>
+<td><span class="arithmatex">\(1/S\)</span></td>
+<td>ゲート電圧に比例して下げる必要あり</td>
+</tr>
+</tbody>
+</table>
+<p><strong>調整の結果としてスケールするパラメーター</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>パラメータ</strong></th>
+<th><strong>記号</strong></th>
+<th><strong>スケーリング則</strong></th>
+<th><strong>意味・影響</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>遅延時間</td>
+<td><span class="arithmatex">\(\tau\)</span></td>
+<td><span class="arithmatex">\(1/S\)</span></td>
+<td>小型化により高速動作が可能</td>
+</tr>
+<tr>
+<td>動的消費電力</td>
+<td><span class="arithmatex">\(P\)</span></td>
+<td><span class="arithmatex">\(1/S^2\)</span></td>
+<td>電圧低下＋容量減少で低消費電力化</td>
+</tr>
+</tbody>
+</table>
+<p>半導体を微細化し、電圧も小さくすることで、遅延時間の短縮と消費電力の低下が達成されます。
+遅延時間とは、入力であるゲート電圧を変更してから、スイッチングが行われるまでの時間で、CPUはこれらのMOSFETの連結なので、遅延時間の短縮がCPUの動作周波数（クロック周波数）の向上に直接関係します。
+また、このスケーリング則はデナード則とも呼ばれます。
+ただし、無限に微細化しても成り立つわけでもなく、2005年~2007年ごろからデナード則は破綻したと言われているようです。</p>
+<div class="admonition info">
+<p class="admonition-title">ムーアの法則</p>
+<p>デナード則よりもムーアの法則の方が有名なのではないでしょうか。
+これはCPUやメモリなどの半導体回路のトランジスタの密度が約2年で2倍になるという、インテル社の共同創業者のゴードン・ムーアによって提唱された経験則です。
+これはデナード則に支えられての予測であって、1965年に提唱されてから、何度も破られるのでは言われ続けながら、近年まで生き続けてきました。</p>
+</div>
+<h2 id="_5">トランジスタを買ってみる</h2>
+<p>CPUなどではトランジスタはシリコンウェハの上につくられているため、直接見ることはできませんが、トランジスタそのものもいまだに売っています。
+電力制御の回路で使われているようです。
+電気街として有名な秋葉原には、電子部品を多く扱う店が多々あり、有名どころだと秋月電子や千石電商があります。
+実際にネットの通販にアクセスして、トランジスタの写真を見てみると、ゲート・ソース・ドレインの３本の足が出ていることが確認できます。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
