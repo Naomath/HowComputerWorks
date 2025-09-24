@@ -6,6 +6,7 @@ nav:
   - 第3章 論理回路: 3_logic.md
   - 1~3章補足: appendix_1_3.md
   - OS: os.md
+  - インターネット: internet.md
 theme:
   name: material
 
