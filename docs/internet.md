@@ -77,7 +77,7 @@ JPNICはさらにこのアドレス空間をたとえば、``1.0.20.0/23``=``000
 例えば、以下のようにアドレス空間を分割していくことが考えられます。
 
 <figure>
-  <img src="/images/network_split.png" width="800">
+  <img src="/HowComputerWorks/images/network_split.png" width="800">
   <figcaption>仮想の大学ネットワーク</figcaption>
 </figure>
 
@@ -110,7 +110,7 @@ PDUとはそれぞれの層での、ヘッダとペイロード(通信データ�
 ただし、
 
 <figure>
-  <img src="/images/protocol.png" width="600">
+  <img src="/HowComputerWorks/images/protocol.png" width="600">
   <figcaption>出典：https://zenn.dev/masahiro_toba/articles/7d29528aaf1cf3</figcaption>
 </figure>
 ここでは、httpリクエストを題材として、それぞれの層で何をしているかを見ていきます。
@@ -127,7 +127,7 @@ PDUとはそれぞれの層での、ヘッダとペイロード(通信データ�
 たまに、ウェブサイトにアクセスすると、「保護されていない通信」などの警告がありますが、httpsを用いずにhttpで通信しているサイトです。
 
 <figure>
-  <img src="/images/http.png" width="600">
+  <img src="/HowComputerWorks/images/http.png" width="600">
   <figcaption>httpサーバーで提供される十島村のウェブサイト</figcaption>
 </figure>
 
@@ -253,7 +253,7 @@ curl -v --http1.1 http://example.com
 
 このときの実行結果が以下です。
 <figure>
-  <img src="/images/wireshark.png" width="1200">
+  <img src="/HowComputerWorks/images/wireshark.png" width="1200">
   <figcaption>Wiresharkでのキャプチャ結果</figcaption>
 </figure>
 
@@ -288,7 +288,7 @@ WiFiに接続するときのルーターもこのルーターなのですが、L
 ノードとは、ノードとエッジの集合で構成されるグラフのノードのことです。
 グラフは以下の図のように示される構造のことで、例えば、``1``がノードで、``1``と``5``を繋ぐのがエッジです。
 <figure>
-  <img src="/images/graph.png" width="300">
+  <img src="/HowComputerWorks/images/graph.png" width="300">
   <figcaption>グラフの例　出典:Wikipedia </figcaption>
 </figure>
 
@@ -298,7 +298,7 @@ WiFiに接続するときのルーターもこのルーターなのですが、L
 
 ここでは以下の仮想大学ネットワークを例にとって考えます。
 <figure>
-  <img src="/images/networkgraph.png" width="1200">
+  <img src="/HowComputerWorks/images/networkgraph.png" width="1200">
   <figcaption>仮想大学ネットワーク </figcaption>
 </figure>
 
