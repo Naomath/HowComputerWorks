@@ -1,0 +1,1145 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../os/">
+      
+      
+        <link rel="next" href="../crypto/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.21">
+    
+    
+      
+        <title>インターネット - 電気からはじめるコンピュータ</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2a3383ac.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="電気からはじめるコンピュータ" class="md-header__button md-logo" aria-label="電気からはじめるコンピュータ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            電気からはじめるコンピュータ
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              インターネット
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="電気からはじめるコンピュータ" class="md-nav__button md-logo" aria-label="電気からはじめるコンピュータ" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    電気からはじめるコンピュータ
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_physics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第1章 物理学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2_transistor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第2章 トランジスタ
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_logic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    第3章 論理回路
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../appendix_1_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1~3章補足
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    インターネット
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    インターネット
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      取り扱う項目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      理解したい用語
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基礎知識
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基礎知識">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      パケット交換
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      インターネットでの識別子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ポート番号
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP/IPプロトコル
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP/IPプロトコル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      アプリケーション層
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      トランスポート層
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      インターネット層
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../crypto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    暗号通信
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      取り扱う項目
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      理解したい用語
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      基礎知識
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="基礎知識">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      はじめに
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      パケット交換
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      インターネットでの識別子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      ポート番号
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      TCP/IPプロトコル
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP/IPプロトコル">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      アプリケーション層
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      トランスポート層
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      インターネット層
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>インターネット</h1>
+
+<h2 id="_1">取り扱う項目</h2>
+<ul>
+<li>インターネット概論</li>
+<li>TCP/IP プロトコル群</li>
+<li>VPN</li>
+<li>SSH</li>
+</ul>
+<h2 id="_2">理解したい用語</h2>
+<p>IPアドレス、グローバルIPアドレス、プライベートIPアドレス、MACアドレス、ポート番号、TCP、UDP、NAT、VPN、NAT越え、ファイヤーウォール、経路表</p>
+<h2 id="_3">基礎知識</h2>
+<h3 id="_4">はじめに</h3>
+<p>Wikipediaを引用すると、「インターネット（英: the Internet）は、 TCP/IPプロトコルを用いて接続された世界規模のコンピュータネットワークである。」と出てきます。
+ここで用語を整理すると、TCP/IPプロトコルとは接続の規格のことで、コンピュータネットワークとは複数のコンピューターが接続されたシステムを言います。
+家庭のルーターを起点としてネットーワークや、会社や病院内のネットワークもコンピューターネットワークであり、それらがインターネットと繋がっています。</p>
+<p>「インターネットに接続する」、といえばChromeなどのブラウザを思い浮かべますが、全世界をまたがるコンピューターネットワークに参画する、というイメージで、それらのネットワークに参加する何百億台のコンピューターと相互通信できるようになる、と考えたほうがいいと思います。</p>
+<p>インターネットを勉強するときのポイントとして、以下の2点を気に留めながら考えると良いかと思います。</p>
+<ul>
+<li>より馴染みのあるネットワークシステム（郵便など）とのアナロジーを考える</li>
+<li>日頃のインターネットの仕組み(Youtubeやメールなど)を思い浮かべ、それらを実現するためには何が必要かを考える</li>
+</ul>
+<h3 id="_5">パケット交換</h3>
+<p>インターネットでの通信はパケット交換で行われます。
+パケット交換では、送信するデータをパケットに分割し、そのパケットに宛先のアドレスを紐付けて、送信します。
+対比するものとしては、回線交換があり、これは電話で使われる方式で、通信端末同士で回線を独占して、情報を送り合います。
+パケット交換は、回線を独占せずに、同一回線にいくつもの異なる宛先のパケットが流れることになります。</p>
+<p>災害時に、「普通の電話よりもLINE電話のほうが繋がりやすい」と言われることがありますが、これは前者が回線交換、後者がパケット交換であるからです。
+回線交換では、限られた回線の数しかないため、それらが全て使用されているとつながることができませんが、一方でパケット交換では回線を共有するため、通話の品質（遅延など）はともかくとして、一般的にはつながりやすいです。
+インターネットも、通信という電話や無線やらの文脈の延長線上にあるため、このような回線交換と比べられることがあるわけです。</p>
+<h3 id="_6">インターネットでの識別子</h3>
+<p>インターネットでの識別子といえば、IPアドレスが有名かと思います。
+IPアドレスは規格としてIPv4とIPv6があるのですが、現在のインターネットで使われているのはIPv4のほうなので、そちらの解説をします。
+IPv4ではアドレスは32bitで表されます。
+<span class="arithmatex">\(2^{32}=4294967296\)</span>で約43億個のアドレスがありますが、これでは足りないのでは、と思われるでしょう。
+実際に足りないため、IPv6は128bitで構成され、約340澗個のアドレスがあります。
+ただし、現在はIPv4が基本で、プライベートIPアドレスがその不足分を補っているからです。</p>
+<p>まずは、自身のコンピューターのIPアドレスを以下のコマンドで調べてみましょう。
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>-4<span class="w"> </span>addr
+</code></pre></div>
+これで自身のLinuxのIPv4のネットワークで割り振られている番号がわかります。
+<code>127.0.0.1</code>というのは自分自身を指定する特別のIPアドレスになります。</p>
+<p>それでは次に<code>google.com</code>のWebアドレスを調べてみましょう。
+<div class="highlight"><pre><span></span><code>nslookup<span class="w"> </span>google.com
+</code></pre></div></p>
+<p>グローバルIPアドレスは限られており、一意に定める必要があるので、適切に割り当てる必要があります。
+全世界で管理している団体がIANAであり、アジアの管轄をIANAから依頼されているのがAPNICで、JPNICが日本での管轄をAPNICから依頼されているという形式になっています。
+JPNICはアドレスを割り当てるわけですが、アドレス一つ一つを割り当てるというよりは、どこからどこまでのアドレス範囲、アドレス空間を割り当てます。
+<a href="https://ipv4.fetus.jp/jp?_lang=ja-JP">このサイト</a>から日本に割り当てられているアドレス空間を確認できます。
+余談ですが、パケットにはどのIPアドレスから来たかの送信元アドレスがついているので、送信元アドレスと上記のようなサイトを照らし合わせれば、どこからその通信がやってきたのか（例えば、サイバー攻撃もパケットなのでどこからきたかを分析するのは大事）がわかります。</p>
+<p>例えば、<code>1.0.16.0/20</code>がJPNICには割り振られていますが、この意味はIPアドレスが<code>1.0.16.0</code>~<code>1.0.31.255</code>の範囲で使えるということです。
+<code>1.0.16.0/20</code>を32bitで表すと、<code>00000001 00000000 00010000 00000000</code>になりますが、これの上位20bit分は指定で、残りの<code>32-20=12</code>bit分は自由に使えるよ、ということです。
+ですので、自由に変えられるビットを<code>X</code>で表すと、<code>00000001 00000000 0001XXXX XXXXXXXX</code>です。
+JPNICはさらにこのアドレス空間をたとえば、<code>1.0.20.0/23</code>=<code>00000001 00000000 0001010X XXXXXXXX</code>というように分けて配ります。</p>
+<p>また、以下の三つのアドレス空間はプライベートアドレス空間として、グローバルIP番号としては割り振られません。
+内部的なコンピューターネットワークを構築する際には、これらの空間を用いることで十分です。
+日常生活で用いるような機器にはこれらのプライベートIPアドレスが割り振られていることが多いですが、例外として、スマホをWiFiではなくモバイル通信で接続しているときは、契約しているキャリアが保持しているグローバルIPが割り振られます。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">アドレス空間</th>
+<th style="text-align: left;">用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>10.0.0.0/8</code></td>
+<td style="text-align: left;">企業や大学などの大規模ネットワーク</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>172.16.0.0/16</code></td>
+<td style="text-align: left;">中規模。VPNネットワークで使われることが多い</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>192.168.0.0/24</code></td>
+<td style="text-align: left;">小規模。家庭用WiFiのデフォルト</td>
+</tr>
+</tbody>
+</table>
+<p>一つの疑問として、プライベートIPアドレスを持つPCからウェイブサイトにアクセスするときに、そのサイトのWebサーバーはグローバルIPアドレスを持っているだろうから、PC→Webサーバーへとパケットは送ることができても、その逆はできないのでは？、というものがあるかもしれません。
+これは後述するNATという技術を使うことで解決できます。</p>
+<p>さて、このIPアドレスには<strong>階層性</strong>という重要な性質があります。
+<code>10.0.0.0/8</code>を東京大学ネットワークのアドレス空間として、駒場キャンパス一号館102号室のWiFiに接続される機器へのアドレスの割り振りを考えます。
+例えば、以下のようにアドレス空間を分割していきます。</p>
+<figure>
+  <img src="/HowComputerWorks/images/network_split.png" width="800">
+  <figcaption>仮想の大学ネットワーク</figcaption>
+</figure>
+
+<p>この図の見方としては、徐々にアドレス空間を上位のbitを埋めることで絞っていき、最終的に102号室では、上位21bitは固定で、下位<code>32-21=11</code>bitを自由に割り振ります。</p>
+<h3 id="_7">ポート番号</h3>
+<p>ポート番号とは、ネットワーク通信で、同じIPアドレス内でどのアプリケーションやサービスと通信するのかを識別する番号で、0から65535までの範囲に存在します。
+通信する際は、宛先と送信元のIPアドレスのみならず、ポート番号も使うことで、一つのコンピューターで複数の通信を確立することができます。</p>
+<p>前半の方の番号は、どの通信に使うかが決まっています。
+例えば、80番はhttpサーバーの番号として予約されています。
+ですので、例えば、アドレス<code>192.0.2.1</code>のhttpサーバーにパケットを送信するときは、<code>192.0.2.1:80</code>というようにポート番号まで指定します。</p>
+<h2 id="tcpip">TCP/IPプロトコル</h2>
+<p>現在のインターネットで利用されるプロトコルスイートはTCP/IPプロトコルです。
+TCP/IPプロトコルでは以下の四つのレイヤーに分かれます。</p>
+<table>
+<thead>
+<tr>
+<th>層名</th>
+<th>役割</th>
+<th>Protocol Data Unit (PDU)</th>
+<th>代表的なプロトコル（TCP/IP）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>アプリケーション層</strong></td>
+<td>ユーザーやアプリケーションに直接サービスを提供する層。通信内容の形式や手順を定義し、データの意味を扱う。</td>
+<td>なし</td>
+<td>HTTP（Web通信）、SMTP（メール送信）、POP3/IMAP（メール受信）、FTP（ファイル転送）、DNS（名前解決）、SSH（リモート接続）</td>
+</tr>
+<tr>
+<td><strong>トランスポート層</strong></td>
+<td>アプリケーション間の通信を管理する層。データの分割・再構成、エラー検出、信頼性の確保、ポート番号による識別などを行う。</td>
+<td>セグメント(TCP)、データグラム(UDP)</td>
+<td>TCP（信頼性のあるコネクション型通信）、UDP（高速なコネクションレス通信）</td>
+</tr>
+<tr>
+<td><strong>インターネット層</strong></td>
+<td>ネットワーク全体でのデータ転送経路を決定する層。パケットのアドレス指定やルーティングを担当する。</td>
+<td>パケット</td>
+<td>IP（IPv4/IPv6：パケットの配送）、ICMP（エラー通知や診断）、ARP（IPアドレスからMACアドレスの解決）</td>
+</tr>
+<tr>
+<td><strong>リンク層（ネットワークインターフェース層）</strong></td>
+<td>物理的な通信媒体とのインターフェースを担当し、同一ネットワーク内でのデータ転送を行う層。フレーム化やMACアドレス管理なども行う。</td>
+<td>フレーム</td>
+<td>Ethernet（有線LAN）、Wi-Fi（IEEE 802.11）、PPP（ポイント・ツー・ポイント通信）、MAC</td>
+</tr>
+</tbody>
+</table>
+<p>下の図において、「元のデータ」とは、アプリケーション層の、例えばWebページのHTMLをください、とかそれへの返答のHTMLそのものですが、それにどんどん各レイヤーでヘッダが付け加えられたり、分割されていき、最終的にはL2ヘッダとL2トレーラをつけた状態で、LANケーブルやWiFiから信号として出発します。</p>
+<p>PDUとはそれぞれの層での、ヘッダとペイロード(通信データの中身)のひとまとまりの呼び名です。
+一般的に、パケット交換方式であることからも、パケットがインターネットでのデータ通信の単位だと思われがちですが、電気的な信号として直接変換されるものはフレームです。</p>
+<figure>
+  <img src="/HowComputerWorks/images/protocol.png" width="600">
+  <figcaption>出典：https://zenn.dev/masahiro_toba/articles/7d29528aaf1cf3</figcaption>
+</figure>
+<p>ここでは、httpリクエストを題材として、それぞれの層で何をしているかを見ていきます。</p>
+<div class="admonition info">
+<p class="admonition-title">スイート</p>
+<p>一式揃ってるという意味なので、スイートルームと同じ、"suite"です。
+この分野だとよく使われる言葉で、暗号通信のための暗号のセットを「暗号スイート」と言ったりします。</p>
+</div>
+<h3 id="_8">アプリケーション層</h3>
+<p>アプリケーション層としては、HTTPやSMTP、TLS/SSLなどがあります。
+<code>http://example.com</code>などの<code>http://</code>はURLのスキームとspaceばれる部分で、利用するプロトコルを表します。
+これらは通信のフレームワークであり、httpリクエストなどをふんだんに使うことでWebブラウザが動いています。
+ちなみに、ここからはhttpで説明をしますが、通常のネットワークの通信は暗号化がされているhttps通信で動いています。
+たまに、ウェブサイトにアクセスすると、「保護されていない通信」などの警告がありますが、httpsを用いずにhttpで通信しているサイトです。</p>
+<figure>
+  <img src="/HowComputerWorks/images/http.png" width="600">
+  <figcaption>httpサーバーで提供される十島村のウェブサイト</figcaption>
+</figure>
+
+<p>httpではリクエストをhttpサーバーに送り、そのレスポンスをサーバーが送信元に返す、という流れになります。
+リクエストの種類としては複数ありますが、有名なものは<code>GET</code> <code>POST</code> <code>PUT</code> <code>DELETE</code>です。</p>
+<table>
+<thead>
+<tr>
+<th>メソッド</th>
+<th>用途・意味</th>
+<th>主な特徴</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>資源の取得（読み取り）</td>
+<td>- サーバーからデータを取得する<br>- リクエストボディは基本的に使わない<br>- 安全であり副作用がない（※冪等）</td>
+<td><code>/users</code>（全ユーザー一覧を取得）<br><code>/users/1</code>（ID=1のユーザー情報を取得）</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>新規資源の作成</td>
+<td>- サーバーに新しいデータを送信し、作成を要求<br>- リクエストボディにデータを含む<br>- 冪等ではない</td>
+<td><code>/users</code> にユーザー情報を送信して新規作成</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>資源の完全更新（上書き）</td>
+<td>- 既存のデータを<strong>全体的に上書き</strong><br>- リクエストボディに新しいデータを含む<br>- 冪等である</td>
+<td><code>/users/1</code> にユーザー情報を送信してID=1の情報を上書き</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>資源の削除</td>
+<td>- 指定したデータを削除する<br>- 通常リクエストボディは不要<br>- 冪等である</td>
+<td><code>/users/1</code>（ID=1のユーザーを削除）</td>
+</tr>
+</tbody>
+</table>
+<p>ただ、これらはあくまで、約束事なので、実際にどういう処理をするかは、リクエストを受け取ったサーバー側の設定によります。
+ただし、ブラウザなどはメソッドの種類によってキャッシュをするかどうかなどを決めるため、プロトコルに従った実装をすることがベターです。</p>
+<div class="admonition info">
+<p class="admonition-title">RFC (Requests for Comments)</p>
+<p>インターネットの大体のプロトコルは、このRFCとして通し番号とともに管理されています。
+例えば、HTTP通信でのメソッドの種類は<a href="https://tex2e.github.io/rfc-translater/html/rfc7231.html">RFC 7231</a>として公開されています。
+現在は、IETFという団体が管理しています。</p>
+<p><a href="https://www.nic.ad.jp/ja/newsletter/No24/090.html">JPNICによる解説</a></p>
+</div>
+<p>さて、HTTPは現在、<strong>HTTP/3</strong>が最新バージョンになりますが、HTTP/2以降はデータはバイナリ形式です。
+一方で、1997年にRFC 2068で発表されたHTTP/1では人の目でも読めるようなテキスト形式なので、<code>example.com</code>に対して、HTTP/1.1で<code>GET</code>メソッドをリクエストしてみます。
+<code>example.com</code>というのは、IPアドレスを管理しているIANAがドキュメントでの例示目的のために用意しているURLです。
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-v<span class="w"> </span>--http1.1<span class="w"> </span>http://example.com
+</code></pre></div>
+このコマンドの出力を見ると、リクエストの部分が以下です。
+<div class="highlight"><pre><span></span><code>&gt; GET / HTTP/1.1
+&gt; Host: example.com
+&gt; User-Agent: curl/8.7.1
+&gt; Accept: */*
+</code></pre></div>
+レスポンスが以下の部分になります。
+<div class="highlight"><pre><span></span><code>&lt; HTTP/1.1 200 OK
+&lt; Accept-Ranges: bytes
+&lt; Content-Type: text/html
+&lt; ETag: &quot;84238dfc8092e5d9c0dac8ef93371a07:1736799080.121134&quot;
+&lt; Last-Modified: Mon, 13 Jan 2025 20:11:20 GMT
+&lt; Content-Length: 1256
+&lt; Cache-Control: max-age=86000
+&lt; Date: Wed, 01 Oct 2025 13:46:04 GMT
+&lt; Connection: keep-alive
+&lt; 
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Example Domain&lt;/title&gt;
+
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot; /&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+    body {
+        background-color: #f0f0f2;
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+
+    }
+    div {
+        width: 600px;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: #fdfdff;
+        border-radius: 0.5em;
+        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
+    }
+    a:link, a:visited {
+        color: #38488f;
+        text-decoration: none;
+    }
+    @media (max-width: 700px) {
+        div {
+            margin: 0 auto;
+            width: auto;
+        }
+    }
+    &lt;/style&gt;    
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;div&gt;
+    &lt;h1&gt;Example Domain&lt;/h1&gt;
+    &lt;p&gt;This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.iana.org/domains/example&quot;&gt;More information...&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div>
+httpではデータはヘッダとボディで構成されており、<code>GET</code>ではリクエストはヘッドのみ、レスポンスはヘッダとボディで構成され、<code>example.com</code>ではボディはHTMLが返ってきています。</p>
+<h3 id="_9">トランスポート層</h3>
+<p>トランスポート層では通信を管理し、相手にデータが要求を満たして届くことを保証します。
+TCP/IPプロトコルスタックでは、TCPとUDPという二つのプロトコルが用いられます。
+違いをまとめると以下のようになります。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>TCP (Transmission Control Protocol)</th>
+<th>UDP (User Datagram Protocol)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通信方式</td>
+<td>コネクション型（接続を確立してから通信）</td>
+<td>コネクションレス型（接続なしで送信）</td>
+</tr>
+<tr>
+<td>信頼性</td>
+<td>高い（パケットの再送・順序制御・エラーチェックあり）</td>
+<td>低い（再送・順序制御なし）</td>
+</tr>
+<tr>
+<td>データの順序</td>
+<td>保証される（送信順と受信順が同じ）</td>
+<td>保証されない（順序が入れ替わる可能性あり）</td>
+</tr>
+<tr>
+<td>エラーチェック</td>
+<td>あり（エラー検出・再送で信頼性確保）</td>
+<td>あり（検出のみ。再送は行わない）</td>
+</tr>
+<tr>
+<td>通信速度</td>
+<td>遅い（信頼性確保のためのオーバーヘッドが大きい）</td>
+<td>速い（最低限の処理で即送信）</td>
+</tr>
+<tr>
+<td>通信の開始</td>
+<td>3way-handshakeが必要</td>
+<td>不要（即送信可能）</td>
+</tr>
+<tr>
+<td>利用例</td>
+<td>Web（HTTP/HTTPS）、メール（SMTP/POP3/IMAP）、ファイル転送（FTP）など</td>
+<td>DNS、動画ストリーミング、オンラインゲーム、VoIP など</td>
+</tr>
+</tbody>
+</table>
+<p>TCPではコネクションの確立のために、初めに3way-handshakeが行われます。
+この様子を<a href="https://www.wireshark.org/">Wireshark</a>を用いて見てましょう。
+Wiresharkとは、インストールしているPCに流れてくるパケットを解析するソフトウェアです。
+正確には、パケットではなくて、フレームごとに表示しますが、よく「パケットキャプチャ」と言います。</p>
+<p>Wiresharkのフィルタリングのバーに<code>tcp.port == 80</code>と入力して、TCPでポート80番との通信だけを表示します。
+キャプチャを開始している状態で、以下のコマンドを実行してください。
+<div class="highlight"><pre><span></span><code>curl<span class="w"> </span>-v<span class="w"> </span>--http1.1<span class="w"> </span>http://example.com
+</code></pre></div></p>
+<p>このときの実行結果が以下です。</p>
+<figure>
+  <img src="/HowComputerWorks/images/wireshark.png" width="1200">
+  <figcaption>Wiresharkでのキャプチャ結果</figcaption>
+</figure>
+
+<p>最初の三つのキャプチャを見ると、手元のPCのアドレスが<code>10.100.115.27</code>で、<code>example.com</code>のアドレスが<code>23.192.228.80</code>とわかります。
+3way-handshakeは以下のように行われています。</p>
+<ol>
+<li>手元のPC<code>10.100.115.27</code>から<code>[SYN]</code>パケットを送り、<strong>接続要求の依頼</strong>をする</li>
+<li><code>example.com</code>のHTTPサーバー<code>23.192.228.80</code>が<code>[SYN,ACK]</code>パケットをおくり、<strong>接続要求への応答と同意</strong>をする</li>
+<li>手元のPC<code>10.100.115.27</code>から<code>[ACK]</code>パケットを送り、<strong>接続への同意を確認したことへの通達</strong>をする</li>
+</ol>
+<p>このように3回に分けて、パケットを送り合いコネクションを確立しているため、<em><em>3</em>way</em>-handshakeと言います。</p>
+<p>また、TCPは輻輳制御や再送などによりスムーズに通信が行われるような制御もしています。
+詳しくはここには書きませんが、もし興味があれば調べて見てください。</p>
+<p>一方で、UDPはコネクションを確立せず、パケットが確実に到着することも保証しません。
+ただし、その分、やり取りの確認のための通信がないため、通信が早く、途中のデータがロスしても問題ないライブ動画配信などで用いられます。</p>
+<h3 id="_10">インターネット層</h3>
+<p>インターネット層ではネットワーク全体でのデータの転送経路を決定します。
+IPアドレスが
+インターネット層では、ネットワークのノードとしては、ホストとルーターの二つの役割があります。
+ネットワークに接続する機器はどちらの機能も持っています。
+WiFiに接続するときのルーターもこのルーターなのですが、L2スイッチ(リンク層で解説)としての役割も持っています。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>役割</th>
+<th>例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ホスト（Host）</strong></td>
+<td>IPパケットの送信元または宛先として機能する端末</td>
+<td>PC、スマートフォン、サーバ など</td>
+</tr>
+<tr>
+<td><strong>ルータ（Router）</strong></td>
+<td>IPパケットを別のネットワークへ転送する中継装置</td>
+<td>家庭用ルータ、企業ネットワークルータ など</td>
+</tr>
+</tbody>
+</table>
+<p>ノードとは、ノードとエッジの集合で構成されるグラフのノードのことです。
+グラフは以下の図のように示される構造のことで、例えば、<code>1</code>がノードで、<code>1</code>と<code>5</code>を繋ぐのがエッジです。</p>
+<figure>
+  <img src="/HowComputerWorks/images/graph.png" width="300">
+  <figcaption>グラフの例　出典:Wikipedia </figcaption>
+</figure>
+
+<p>ここで意識をしたいのは、あるノードから直接アクセスできるのはエッジで繋がっているノードのみ、ということです。
+インターネットもネットワーク構造でグラフで表されるため、ホストからはエッジでつながるノードへしか直接はアクセスできないはずですが、実際は、任意の二つのノードで通信ができます。
+これを可能にしているのが、IPアドレスの階層性と経路表です。</p>
+<p>ここでは以下の仮想大学ネットワークを例にとって考えます。</p>
+<figure>
+  <img src="/HowComputerWorks/images/networkgraph.png" width="1200">
+  <figcaption>仮想大学ネットワーク </figcaption>
+</figure>
+
+<p>本郷ネットワークに属する<code>10.64.16.1</code>のサーバーから駒場1号館102教室のWiFiに接続されている<code>10.1.16.1</code>のスマートフォンまでどのように転送するでしょうか。
+ここでルーターは経路表にそって、次にパケットを配送する先を決めます。</p>
+<p>経路表はネットワークごとにどのルーターに送るかが決めてあります。
+例えば、<code>10.0.0.1</code>のルーターの経路表は以下のようになります。</p>
+<table>
+<thead>
+<tr>
+<th>ネットワーク</th>
+<th>次のルーター</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.2.0.0/16</td>
+<td>10.2.0.1</td>
+</tr>
+<tr>
+<td>10.64.0.0/10</td>
+<td>10.64.0.1</td>
+</tr>
+</tbody>
+</table>
+<p>本来はもっと接続先があるはずなので、これより大きいですが、例えばパケットが本郷ネットワークから駒場ネットワークに入ってきたもので、一号館のIPアドレスを指すものだったら、<code>10.2.0.1</code>に配送するわけです。</p>
+<p>また、経路表には「デフォルトゲートウェイ」と呼ばれる項目があり、経路表に該当しないネットワーク宛てのパケットは、このデフォルトゲートウェイに送信されるようになっています。
+経路表は全てのノードにあり、例えば、自宅のWiFiに接続される機器のデフォルトゲートウェイはそのWiFiということになっています。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
